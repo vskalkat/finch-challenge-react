@@ -3,7 +3,7 @@ import { TaskDepsI, TaskI } from "./constants";
 import { Modal } from "@/components/ui/modal";
 import { Button } from "@/components/ui/button";
 
-export const EditTask = ({ task, allTasks = [], onEditTask = () => { }, onCancel = () => { } }: {
+export const EditTask = ({ task, allTasks = {}, onEditTask = () => { }, onCancel = () => { } }: {
     task: TaskI;
     allTasks?: TaskI;
     onEditTask?: (task: TaskI) => void;
