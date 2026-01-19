@@ -80,6 +80,7 @@ export const EditTask = ({ task, allTasks = {}, onEditTask = () => { }, onCancel
                                         value={newDependencyTaskName}
                                         onChange={(e) => setNewDependencyTaskName(e.target.value)}
                                     >
+                                        <option value="" disabled>Select a task...</option>
                                         {Object.keys(allTasks).map((t) => (
                                             <option disabled={dependencies.some(d => d.task_name === t) || t === taskName} key={t} value={t}>{t}</option>
                                         ))}
@@ -94,7 +95,7 @@ export const EditTask = ({ task, allTasks = {}, onEditTask = () => { }, onCancel
                                     />
                                 </div>
 
-                                <Button type="button" onClick={() => handleAddDependency(newDependencyTaskName, newDependencyTimePassed)}>Add</Button>
+                                <Button type="button" onClick={() => handleAddDependency(newDependencyTaskName, newDependencyTimePassed)} disabled={!newDependencyTaskName}>Add</Button>
                             </div>
 
                         </div>
